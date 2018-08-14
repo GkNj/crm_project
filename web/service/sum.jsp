@@ -72,12 +72,6 @@
 					</table>
 					<div class="paging">此处是分页</div>
 				</div>
-				<div class="bbD">
-					<p class="bbDP">
-						<button class="btn_ok btn_yes" href="#">保存</button>
-						<a class="btn_ok btn_no" href="#">取消</a>
-					</p>
-				</div>
 			</div>
 		</div>
 
