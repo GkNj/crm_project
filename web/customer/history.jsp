@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>历史订单-有点</title>
 <link rel="stylesheet" type="text/css" href="../base/css/css.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../base/js/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="js/page.js" ></script> -->
 </head>
 
@@ -23,21 +23,10 @@
 			<div class="connoisseur">
 				<div class="conform">
 						<div class="cfD">
-							<%--时间段：<input class="vinput" type="text" />&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;--%>
-							<%--<input class="vinput vpr" type="text" /> 审核状态：<label><input--%>
-								<%--type="radio" checked="checked" name="styleshoice1" />&nbsp;未审核</label> <label><input--%>
-								<%--type="radio" name="styleshoice1" />&nbsp;待审核</label> <label><input--%>
-								<%--type="radio" name="styleshoice1" />&nbsp;待约见</label> <label><input--%>
-								<%--type="radio" name="styleshoice1" />&nbsp;已完成</label> <label class="lar"><input--%>
-								<%--type="radio" name="styleshoice1" />&nbsp;已作废</label> 推荐状态：<label><input--%>
-								<%--type="radio" checked="checked" name="styleshoice2" />&nbsp;未付款</label> <label><input--%>
-								<%--type="radio" name="styleshoice2" />&nbsp;已付款</label>--%>
 								<a href="linkmanadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>
 								<button class="button" style="float: right">返回</button><br>
 						</div>
 						<div class="cfD" style="margin-top: 30px">
-							<%--<input class="addUser" type="text" placeholder="输入用户名/ID/手机号/城市" />--%>
-							<%--<button class="button">搜索</button>--%>
 								<table width="100%">
 									<tr>
 										<td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户编号</td>

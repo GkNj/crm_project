@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>订单明细-有点</title>
 <link rel="stylesheet" type="text/css" href="../base/css/css.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../base/js/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="js/page.js" ></script> -->
 </head>
 
@@ -24,10 +24,12 @@
 				<div class="conform">
 						<div class="cfD">
 								<%--<a href="communicationadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>--%>
-								<button class="button" style="float: right">返回</button><br>
+								<button class="button" style="position: absolute;right: 130px">返回</button>
+								<button class="button" style="position: absolute;right: 420px"><a href="confirm.jsp">确认流失</button></a>
+								<button class="button" style="position: absolute;right: 275px">保存</button><br>
 						</div>
-						<div class="cfD" style="margin-top: 30px">
-								<table width="100%">
+						<div class="cfD" style="margin-top: 30px;margin-left: 50px">
+								<table width="90%">
 									<tr>
 										<td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">编号</td>
 										<td width="30%" class="tdColor" style="color: black">1</td>
@@ -46,7 +48,7 @@
 									</tr>
 									<tr>
 										<td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">追加暂缓措施</td>
-										<td colspan="3" width="30%" class="tdColor" style="color: black"><textarea rows="3" cols="50"></textarea></td>
+										<td colspan="3" width="30%" class="tdColor" style="color: black"><textarea style="width: 350px;height: 80px"></textarea></td>
 									</tr>
 								</table>
 						</div>
