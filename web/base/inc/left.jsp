@@ -61,21 +61,21 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/create.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务创建</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/allocation.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务分配</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/manage.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务处理</a><img
                     class="icon5" src="../img/coin21.png"/>
