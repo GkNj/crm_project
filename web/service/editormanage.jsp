@@ -19,7 +19,7 @@
     <div class="pageTop">
         <div class="page">
             <img src="../base/img/coin02.png"/><span><a href="#">首页</a>&nbsp;-&nbsp;<a
-                href="#">服务创建</a>&nbsp;-</span>&nbsp;服务添加
+                href="#">客户服务管理</a>&nbsp;-</span>&nbsp;服务处理
         </div>
     </div>
     <div class="page ">
@@ -31,53 +31,53 @@
                 <button class="button">保存</button>
             </div>
             <div class="baTopNo">
-                <span>服务添加</span>
+                <span>服务处理</span>
             </div>
-            <div class="baBody">
-                <div class="bbD">
-                    编号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    服务类型:&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    概要：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    客户：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    状态:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    服务请求：
-                    <input type="text" class="input3"/>
-                </div>
+            <div class="cfD" style="margin-top: 30px;margin-left: 50px">
+                <table width="90%">
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">编号</td>
+                        <td width="30%" class="tdColor" style="color: black">456</td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">服务类型</td>
+                        <td width="40%" class="tdColor" style="color: black">咨询</td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">概要</td>
+                        <td width="30%" colspan="3" class="tdColor" style="color: black">询问收音机订单运费承担方式</td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
+                        <td width="30%" class="tdColor" style="color: black">太阳药业</td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">状态</td>
+                        <td width="40%" class="tdColor" style="color: black">已分配</td>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">服务请求</td>
+                        <td width="30%" colspan="3" class="tdColor" style="color: black">收音机订单运费如何承担？</td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建人</td>
+                        <td width="30%" class="tdColor" style="color: black">小明</td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">创建时间</td>
+                        <td width="40%" class="tdColor" style="color: black">2007年12月02日 15时26分58秒</td>
+                    <tr>
 
-                <div class="bbD">
-                    创建人：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    创建时间：<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    分配给:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                   分配时间：<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    服务处理：
-                    <div class="btext">
-                        <textarea class="text2"></textarea>
-                    </div>
-                </div>
-                <div class="bbD">
-                    处理人：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    处理时间：<input type="text" class="input3"/>
-                </div>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">分配给</td>
+                        <td width="30%" class="tdColor" style="color: black">旺财</td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">分配时间</td>
+                        <td width="40%" class="tdColor" style="color: black">2007年12月02日 15时26分58秒</td>
+                    <tr>
+                    <tr>
+                    <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">服务处理</td>
+                        <td colspan="3" width="30%" class="tdColor" style="color: black"><textarea style="width: 350px;height: 80px"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">处理人</td>
+                        <td width="30%" class="tdColor" style="color: black"><input type="text" value="刘颖"></td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">处理时间</td>
+                        <td width="40%" class="tdColor" style="color: black"><input type="text" value="2007年12月02日 15时26分58秒"></td>
+                    <tr>
+                </table>
             </div>
         </div>
 
