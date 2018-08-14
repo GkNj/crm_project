@@ -18,6 +18,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="page ">
 			<!-- 上传广告页面样式 -->
 			<div class="banneradd bor">
