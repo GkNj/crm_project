@@ -106,7 +106,7 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../balance.html"
+                                                                   src="../img/coin222.png"/><a href="../../statistics/customerContribute.html"
                                                                                                 target="main"
                                                                                                 class="cks">客户贡献分析</a><img
                     class="icon5"
