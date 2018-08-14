@@ -25,16 +25,17 @@
     <div class="page ">
         <!-- 上传广告页面样式 -->
         <div class="banneradd bor">
-            <div class="cfD" style="left: 500px ;top:-10px ;position: absolute">
-                <button class="button">帮助</button>
-                <button class="button">返回</button>
-                <button class="button">保存</button>
-            </div>
+
             <div class="baTopNo">
                 <span>服务处理</span>
             </div>
             <div class="cfD" style="margin-top: 30px;margin-left: 50px">
                 <table width="90%">
+                    <div class="cfD" style="left: 560px ;top:90px ;position: absolute">
+                        <button class="button">帮助</button>
+                        <button class="button">返回</button>
+                        <button class="button">保存</button>
+                    </div>
                     <tr>
                         <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">编号</td>
                         <td width="30%" class="tdColor" style="color: black">456</td>
@@ -43,7 +44,7 @@
                     </tr>
                     <tr>
                         <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">概要</td>
-                        <td width="30%" colspan="3" class="tdColor" style="color: black">询问收音机订单运费承担方式</td>
+                        <td width="30%" colspan="3" class="tdColor" style="color: black;text-align: left" >询问收音机订单运费承担方式</td>
                     </tr>
                     <tr>
                         <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
@@ -52,7 +53,7 @@
                         <td width="40%" class="tdColor" style="color: black">已分配</td>
                     <tr>
                         <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">服务请求</td>
-                        <td width="30%" colspan="3" class="tdColor" style="color: black">收音机订单运费如何承担？</td>
+                        <td width="30%" colspan="3" class="tdColor" style="color: black;text-align: left">收音机订单运费如何承担？</td>
                     </tr>
                     <tr>
                         <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建人</td>

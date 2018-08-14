@@ -29,35 +29,34 @@
         <!-- banner页面样式 -->
         <div class="connoisseur">
             <div class="conform">
-                <form>
-                    <div class="cfD" style="left: 800px ;top:-10px ;position: absolute">
-                        <button class="button">帮助</button>
-                        <button class="button">查询</button>
-                    </div>
-                    <div class="bbD">
-                        客户:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                    </div>
-                    <div class="bbD">
-                        概要:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                    </div>
-                    <div class="bbD">
-                        服务类型:<select class="input3">
-                        <option value="">全部</option>
-                        <option value="">咨询</option>
-                        <option value="">建议</option>
-                        <option value="">投诉</option>
-                    </select>
-                    </div>
-                    <div class="bbD">
-                        创建日期：<input type="text" class="input3"/>
-                    </div>
-                    <div class="bbD">
-                        状态:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<select class="input3">
-                        <option value="">新创建</option>
-                        <option value="">已分配</option>
-                    </select>
-                    </div>
-                </form>
+                <div class="cfD" style="margin-top: 30px;margin-left: 50px">
+                    <table width="90%">
+                        <tr>
+                            <td width="20%" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
+                            <td width="20%" class="tdColor" style="color: black"><input type="text"></td>
+                            <td width="20%" class="tdColor" style="background-color: #47a4e1;color: black">概要</td>
+                            <td width="20%" class="tdColor" style="color: black"><input type="text"></td>
+                            <td width="20%" class="tdColor" style="background-color: #47a4e1;color: black">服务类型</td>
+                            <td width="10%" class="tdColor" style="color: black"><select name="" id="">
+                                <option value="">全部</option>
+                                <option value="">咨询</option>
+                                <option value="">建议</option>
+                                <option value="">投诉</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建日期
+                            </td>
+                            <td width="30%" class="tdColor" style="color: black"><input type="text"></td>
+                            <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">状态</td>
+                            <td width="40%" class="tdColor" style="color: black"><select>
+                                <option>新创建</option>
+                                <option>已分配</option>
+                            </select></td>
+                        </tr>
+
+                    </table>
+                </div>
                 <!-- banner 表格 显示 -->
                 <div class="conShow">
                     <table border="1" cellspacing="0" cellpadding="0">
@@ -78,9 +77,15 @@
                             <td>13312345678</td>
                             <td>南京市</td>
                             <td>南京设疑网络科技公司哈哈哈</td>
-                            <td>总监</td>
-                            <td><a href="connoisseuradd.html"><img class="operation"
-                                                                   src="../base/img/update.png"></a> <img
+                            <td><select>
+                                <option>请选择...</option>
+                                <option>小明</option>
+                                <option>旺财</option>
+                                <option>球球</option>
+                                <option>孙小美</option>
+                                <option>周婕纶</option>
+                            </select></td>
+                            <td><a href="connoisseuradd.html"></a> <img
                                     class="operation delban"
                                     src="../base/img/delete.png"></td>
                         </tr>

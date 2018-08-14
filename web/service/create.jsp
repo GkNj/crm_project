@@ -28,44 +28,44 @@
             <div class="baTopNo">
                 <span>服务添加</span>
             </div>
-            <div class="baBody">
-                <div class="bbD">
-                    编号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    服务类型:<select class="input3">
-                    <option value="">咨询</option>
-                    <option value="">建议</option>
-                    <option value="">投诉</option>
-                </select>
-                </div>
-                <div class="bbD">
-                    概要：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    客户：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    服务请求：
-                    <div class="btext">
-                        <textarea class="text2"></textarea>
-                    </div>
-                </div>
-
-                <div class="bbD">
-                    创建人：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
-                </div>
-                <div class="bbD">
-                    创建时间：<input type="text" class="input3"/>
-                </div>
-
-
-                <div class="bbD">
-                    <p class="bbDP">
-                        <button class="btn_ok btn_yes" href="#">提交</button>
-                        <a class="btn_ok btn_no" href="#">取消</a>
-                    </p>
-                </div>
+            <div class="cfD">
+                <%--<a href="communicationadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>--%>
+                <button class="button" style="position: absolute;right: 130px">帮助</button>
+                <button class="button" style="position: absolute;right: 275px">保存</button><br>
+            </div>
+            <div class="cfD" style="margin-top: 30px;margin-left: 50px">
+                <table width="90%">
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">编号</td>
+                        <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text"></td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">服务类型</td>
+                        <td width="40%" class="tdColor" style="color: black"><select name="" id="">
+                            <option value="">咨询</option>
+                            <option value="">建议</option>
+                            <option value="">投诉</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">概要</td>
+                        <td width="30%" colspan="3" class="tdColor" style="color: black ;text-align: left"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
+                        <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text"></td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">状态</td>
+                        <td width="40%" class="tdColor" style="color: black">新创建</td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">服务请求</td>
+                        <td colspan="3" width="30%" class="tdColor" style="color: black"><textarea style="width: 350px;height: 80px"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
+                        <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" value="刘颖"></td>
+                        <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">创建时间</td>
+                        <td width="40%" class="tdColor" style="color: black;text-align: left"><input type="text" value="2007-11-26 10:47:5"></td>
+                    </tr>
+                </table>
             </div>
         </div>
 
