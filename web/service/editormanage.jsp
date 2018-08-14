@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: dell
   Date: 2018/8/14
-  Time: 9:04
+  Time: 10:32
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -25,31 +25,33 @@
     <div class="page ">
         <!-- 上传广告页面样式 -->
         <div class="banneradd bor">
+            <div class="cfD" style="left: 500px ;top:-10px ;position: absolute">
+                <button class="button">帮助</button>
+                <button class="button">返回</button>
+                <button class="button">保存</button>
+            </div>
             <div class="baTopNo">
                 <span>服务添加</span>
             </div>
             <div class="baBody">
                 <div class="bbD">
-                    编号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                    编号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
                 </div>
                 <div class="bbD">
-                    服务类型:<select class="input3">
-                    <option value="">咨询</option>
-                    <option value="">建议</option>
-                    <option value="">投诉</option>
-                </select>
+                    服务类型:&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
                 </div>
                 <div class="bbD">
-                    概要：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                    概要：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
                 </div>
                 <div class="bbD">
-                    客户：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                    客户：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                </div>
+                <div class="bbD">
+                    状态:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
                 </div>
                 <div class="bbD">
                     服务请求：
-                    <div class="btext">
-                        <textarea class="text2"></textarea>
-                    </div>
+                    <input type="text" class="input3"/>
                 </div>
 
                 <div class="bbD">
@@ -58,13 +60,23 @@
                 <div class="bbD">
                     创建时间：<input type="text" class="input3"/>
                 </div>
-
-
                 <div class="bbD">
-                    <p class="bbDP">
-                        <button class="btn_ok btn_yes" href="#">提交</button>
-                        <a class="btn_ok btn_no" href="#">取消</a>
-                    </p>
+                    分配给:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                </div>
+                <div class="bbD">
+                   分配时间：<input type="text" class="input3"/>
+                </div>
+                <div class="bbD">
+                    服务处理：
+                    <div class="btext">
+                        <textarea class="text2"></textarea>
+                    </div>
+                </div>
+                <div class="bbD">
+                    处理人：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input3"/>
+                </div>
+                <div class="bbD">
+                    处理时间：<input type="text" class="input3"/>
                 </div>
             </div>
         </div>
@@ -74,3 +86,4 @@
 </div>
 </body>
 </html>
+

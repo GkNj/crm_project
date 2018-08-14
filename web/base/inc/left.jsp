@@ -30,24 +30,19 @@
         <dl class="system_log">
             <dt>
                 <img class="icon1" src="../img/coin07.png"/><img class="icon2"
-                                                                 src="../img/coin08.png"/> 客户管理<img class="icon3"
-                                                                                                    src="../img/coin19.png"/><img
+                 src="../img/coin08.png"/> 客户管理<img class="icon3" src="../img/coin19.png"/><img
                     class="icon4"
                     src="../img/coin20.png"/>
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../vip.html"
-                                                                                                target="main"
-                                                                                                class="cks">客户信息管理</a><img
+                     src="../img/coin222.png"/><a href="../../customer/connoisseur.jsp" target="main" class="cks">客户信息管理</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../vip.html"
-                                                                                                target="main"
-                                                                                                class="cks">客户流失管理</a><img
-                    class="icon5" src="../img/coin21.png"/>
+                src="../img/coin222.png"/><a href="../../customer/liushi.jsp" target="main"
+                class="cks">客户流失管理</a><img class="icon5" src="../img/coin21.png"/>
             </dd>
         </dl>
 
@@ -61,21 +56,21 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/create.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务创建</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/allocation.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务分配</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/manage.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务处理</a><img
                     class="icon5" src="../img/coin21.png"/>
@@ -106,7 +101,7 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../balance.html"
+                                                                   src="../img/coin222.png"/><a href="../../statistics/customerContribute.html"
                                                                                                 target="main"
                                                                                                 class="cks">客户贡献分析</a><img
                     class="icon5"
