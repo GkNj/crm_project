@@ -82,14 +82,14 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/feedback.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务反馈</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../wish.html"
+                                                                   src="../img/coin222.png"/><a href="../../service/sum.jsp"
                                                                                                 target="main"
                                                                                                 class="cks">服务归档</a><img
                     class="icon5" src="../img/coin21.png"/>
