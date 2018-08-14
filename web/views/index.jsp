@@ -14,13 +14,13 @@
 </head>
 <frameset rows="100,*" cols="*" scrolling="No" framespacing="0"
           frameborder="no" border="0">
-    <frame src="../inc/head.jsp"
+    <frame src="../base/inc/head.jsp"
            name="headmenu" id="mainFrame" title="mainFrame"><!-- 引用头部 -->
     <!-- 引用左边和主体部分 -->
     <frameset rows="100*" cols="220,*" scrolling="No"
               framespacing="0" frameborder="no" border="0">
         <frame
-                src="../inc/left.jsp" name="leftmenu" id="mainFrame" title="mainFrame">
+                src="../base/inc/left.jsp" name="leftmenu" id="mainFrame" title="mainFrame">
         <frame src="main.jsp" name="main" scrolling="yes" noresize="noresize"
                id="rightFrame" title="rightFrame">
     </frameset>
