@@ -44,14 +44,22 @@ CREATE TABLE `order`
     o_time VARCHAR(255),
     o_address VARCHAR(255),
     o_state VARCHAR(255),
-    o_item VARCHAR(255),
-    o_num INT(11),
-    o_unit VARCHAR(255),
-    o_price DECIMAL(10),
     c_id INT(11),
+    o_sum VARCHAR(255),
     CONSTRAINT fk_c_o FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX c_id ON `order` (c_id);
+CREATE TABLE product
+(
+    p_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    p_name VARCHAR(255),
+    p_num INT(11),
+    p_unit VARCHAR(255),
+    p_price DECIMAL(10),
+    o_id INT(11),
+    CONSTRAINT fk_p_o FOREIGN KEY (o_id) REFERENCES `order` (o_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE INDEX o_id ON product (o_id);
 CREATE TABLE role
 (
     r_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -70,3 +78,37 @@ CREATE TABLE trade
     CONSTRAINT fk_c_t FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX c_id ON trade (c_id);
+
+create table handle
+(
+    h_id INT(10) auto_increment
+        primary key,
+    s_id INT(10) null,
+    d_id INT(10) null,
+    h_handle VARCHAR(255) null,
+    r_id INT(10) null,
+    h_time VARCHAR(255) null
+)
+;
+create table distribute
+(
+    d_id INT(10) auto_increment
+        primary key,
+    s_id INT(10) null,
+    r_id INT(10) null,
+    d_time VARCHAR(255) null
+)
+;
+create table service
+(
+    s_id INT(10) auto_increment
+        primary key,
+    s_type VARCHAR(255) null,
+    s_detail VARCHAR(255) null,
+    c_id INT(10) null,
+    s_state VARCHAR(255) null,
+    s_request VARCHAR(255) null,
+    r_id INT(10) null,
+    s_time VARCHAR(255) null
+)
+;
