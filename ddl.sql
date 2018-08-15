@@ -44,14 +44,22 @@ CREATE TABLE `order`
     o_time VARCHAR(255),
     o_address VARCHAR(255),
     o_state VARCHAR(255),
-    o_item VARCHAR(255),
-    o_num INT(11),
-    o_unit VARCHAR(255),
-    o_price DECIMAL(10),
     c_id INT(11),
+    o_sum VARCHAR(255),
     CONSTRAINT fk_c_o FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX c_id ON `order` (c_id);
+CREATE TABLE product
+(
+    p_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    p_name VARCHAR(255),
+    p_num INT(11),
+    p_unit VARCHAR(255),
+    p_price DECIMAL(10),
+    o_id INT(11),
+    CONSTRAINT fk_p_o FOREIGN KEY (o_id) REFERENCES `order` (o_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE INDEX o_id ON product (o_id);
 CREATE TABLE role
 (
     r_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
