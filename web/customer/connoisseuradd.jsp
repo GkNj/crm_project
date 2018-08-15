@@ -24,6 +24,7 @@
             </div>
 
         <div class="baBody">
+            <form action="${path}/customer.do?method=add" method="post">
             <div class="bbD">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名称：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="text" class="input3" />
@@ -102,6 +103,7 @@
                     <a class="btn_ok btn_no" href="connoisseur.jsp">返回</a>
                 </p>
             </div>
+            </form>
         </div>
     </div>
         <!-- 上传广告页面样式end -->

@@ -117,7 +117,7 @@ public class DBUtil {
 
     public static void main(String[] args) throws SQLException {
 
-        DBUtil.excuteUpdate("update student set sname= '王菊2号' where s = '08'");
+        System.out.println(DBUtil.getConnection());
 
     }
 }
