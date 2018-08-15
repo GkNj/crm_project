@@ -78,3 +78,37 @@ CREATE TABLE trade
     CONSTRAINT fk_c_t FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX c_id ON trade (c_id);
+
+create table handle
+(
+    h_id INT(10) auto_increment
+        primary key,
+    s_id INT(10) null,
+    d_id INT(10) null,
+    h_handle VARCHAR(255) null,
+    r_id INT(10) null,
+    h_time VARCHAR(255) null
+)
+;
+create table distribute
+(
+    d_id INT(10) auto_increment
+        primary key,
+    s_id INT(10) null,
+    r_id INT(10) null,
+    d_time VARCHAR(255) null
+)
+;
+create table service
+(
+    s_id INT(10) auto_increment
+        primary key,
+    s_type VARCHAR(255) null,
+    s_detail VARCHAR(255) null,
+    c_id INT(10) null,
+    s_state VARCHAR(255) null,
+    s_request VARCHAR(255) null,
+    r_id INT(10) null,
+    s_time VARCHAR(255) null
+)
+;
