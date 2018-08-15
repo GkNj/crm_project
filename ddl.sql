@@ -7,12 +7,12 @@ CREATE TABLE customer
     c_class VARCHAR(255),
     c_satifaction INT(11),
     c_credit INT(11),
-    c_adress VARCHAR(255),
     c_portcode VARCHAR(255),
     c_tel VARCHAR(255),
     c_fix VARCHAR(255),
     c_website VARCHAR(255),
     c_state VARCHAR(255),
+    c_address VARCHAR(255),
     CONSTRAINT fk_r_c FOREIGN KEY (r_id) REFERENCES role (r_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX r_id ON customer (r_id);
@@ -31,17 +31,17 @@ CREATE INDEX c_id ON linkman (c_id);
 CREATE TABLE lost
 (
     l_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    l_mesure VARCHAR(255),
     l_reason VARCHAR(255),
     l_state VARCHAR(255),
     c_id INT(11),
+    l_measure VARCHAR(255),
     CONSTRAINT fk_c_lost FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX c_id ON lost (c_id);
 CREATE TABLE `order`
 (
     o_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    o_time DATETIME,
+    o_time VARCHAR(255),
     o_address VARCHAR(255),
     o_state VARCHAR(255),
     o_item VARCHAR(255),
@@ -61,7 +61,7 @@ CREATE TABLE role
 CREATE TABLE trade
 (
     t_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    t_time DATETIME,
+    t_time VARCHAR(255),
     t_address VARCHAR(255),
     t_detail VARCHAR(255),
     t_outline VARCHAR(255),

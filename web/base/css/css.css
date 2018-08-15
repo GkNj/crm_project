@@ -70,7 +70,13 @@ td {
 	margin-top: 50px;
 	margin-bottom: 90px;
 	text-align: right;
+	background-color: #f2f2f2;
 }
+
+.paging .total {
+	float: right;
+}
+
 /*表格和 分页公共CSS end*/
 
 /*广告页面CSS*/
@@ -240,6 +246,10 @@ td {
 
 .bbD {
 	margin-top: 20px;
+}
+
+.bbD .note {
+	text-align: center;
 }
 
 .bbD .bbDP {
