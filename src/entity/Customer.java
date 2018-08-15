@@ -32,11 +32,10 @@ public class Customer {
     private String c_name;
     private String c_area;
     private Role c_manager;
-    private String c_address;
     private String c_class;
     private int c_satifaction;
     private int c_credit;
-    private String c_adress;
+    private String c_address;
     private String c_portcode;
 
     public Role getC_manager() {
@@ -55,15 +54,15 @@ public class Customer {
     public Customer( String c_name, String c_area, String c_address, String c_class, int o, Object o1, Object c_adress, Object c_portcode, Object c_tel, Object c_fix, Object c_website, Object c_state) {
     }
 
-    public Customer(int c_id, String c_name, String c_area, String c_address, String c_class, int c_satifaction, int c_credit, String c_adress, String c_portcode, String c_tel, String c_fix, String c_website, String c_state) {
+    public Customer(int c_id, String c_name, String c_area, Role c_manager, String c_class, int c_satifaction, int c_credit, String c_address, String c_portcode, String c_tel, String c_fix, String c_website, String c_state) {
         this.c_id = c_id;
         this.c_name = c_name;
         this.c_area = c_area;
-        this.c_address = c_address;
+        this.c_manager = c_manager;
         this.c_class = c_class;
         this.c_satifaction = c_satifaction;
         this.c_credit = c_credit;
-        this.c_adress = c_adress;
+        this.c_address = c_address;
         this.c_portcode = c_portcode;
         this.c_tel = c_tel;
         this.c_fix = c_fix;
@@ -95,12 +94,12 @@ public class Customer {
         this.c_area = c_area;
     }
 
-    public String getC_address() {
-        return c_address;
+    public Role getC_manager() {
+        return c_manager;
     }
 
-    public void setC_address(String c_address) {
-        this.c_address = c_address;
+    public void setC_manager(Role c_manager) {
+        this.c_manager = c_manager;
     }
 
     public String getC_class() {
@@ -127,12 +126,12 @@ public class Customer {
         this.c_credit = c_credit;
     }
 
-    public String getC_adress() {
-        return c_adress;
+    public String getC_address() {
+        return c_address;
     }
 
-    public void setC_adress(String c_adress) {
-        this.c_adress = c_adress;
+    public void setC_address(String c_address) {
+        this.c_address = c_address;
     }
 
     public String getC_portcode() {
@@ -173,5 +172,24 @@ public class Customer {
 
     public void setC_state(String c_state) {
         this.c_state = c_state;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "c_id=" + c_id +
+                ", c_name='" + c_name + '\'' +
+                ", c_area='" + c_area + '\'' +
+                ", c_manager=" + c_manager +
+                ", c_class='" + c_class + '\'' +
+                ", c_satifaction=" + c_satifaction +
+                ", c_credit=" + c_credit +
+                ", c_address='" + c_address + '\'' +
+                ", c_portcode='" + c_portcode + '\'' +
+                ", c_tel='" + c_tel + '\'' +
+                ", c_fix='" + c_fix + '\'' +
+                ", c_website='" + c_website + '\'' +
+                ", c_state='" + c_state + '\'' +
+                '}';
     }
 }
