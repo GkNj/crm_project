@@ -2,21 +2,11 @@ package util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Types;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.sql.DataSource;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.Date;
 
 public class DBUtil {
     private static DataSource ds = null;
@@ -115,9 +105,4 @@ public class DBUtil {
         }
     }
 
-    public static void main(String[] args) throws SQLException {
-
-        DBUtil.excuteUpdate("update student set sname= '王菊2号' where s = '08'");
-
-    }
 }

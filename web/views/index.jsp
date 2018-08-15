@@ -21,7 +21,7 @@
               framespacing="0" frameborder="no" border="0">
         <frame
                 src="../base/inc/left.jsp" name="leftmenu" id="mainFrame" title="mainFrame">
-        <frame src="main.jsp" name="main" scrolling="yes" noresize="noresize"
+        <frame src="/views/main.jsp" name="main" scrolling="yes" noresize="noresize"
                id="rightFrame" title="rightFrame">
     </frameset>
 </frameset>

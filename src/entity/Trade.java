@@ -1,4 +1,4 @@
-package User;
+package entity;
 
 /**
  * Created by mac on 2018/8/14.

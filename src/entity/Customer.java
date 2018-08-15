@@ -1,10 +1,34 @@
-package User;
+package entity;
 
 /**
  * Created by mac on 2018/8/14.
  */
 public class Customer {
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "c_id=" + c_id +
+                ", c_name='" + c_name + '\'' +
+                ", c_area='" + c_area + '\'' +
+                ", c_manager=" + c_manager +
+                ", c_address='" + c_address + '\'' +
+                ", c_class='" + c_class + '\'' +
+                ", c_satifaction=" + c_satifaction +
+                ", c_credit=" + c_credit +
+                ", c_adress='" + c_adress + '\'' +
+                ", c_portcode='" + c_portcode + '\'' +
+                ", c_tel='" + c_tel + '\'' +
+                ", c_fix='" + c_fix + '\'' +
+                ", c_website='" + c_website + '\'' +
+                ", c_state='" + c_state + '\'' +
+                '}';
+    }
+
     private int c_id;
+
+    public Customer() {
+    }
+
     private String c_name;
     private String c_area;
     private Role c_manager;
@@ -14,12 +38,21 @@ public class Customer {
     private int c_credit;
     private String c_adress;
     private String c_portcode;
+
+    public Role getC_manager() {
+        return c_manager;
+    }
+
+    public void setC_manager(Role c_manager) {
+        this.c_manager = c_manager;
+    }
+
     private String c_tel;
     private String c_fix;
     private String c_website;
     private String c_state;
 
-    public Customer() {
+    public Customer( String c_name, String c_area, String c_address, String c_class, int o, Object o1, Object c_adress, Object c_portcode, Object c_tel, Object c_fix, Object c_website, Object c_state) {
     }
 
     public Customer(int c_id, String c_name, String c_area, String c_address, String c_class, int c_satifaction, int c_credit, String c_adress, String c_portcode, String c_tel, String c_fix, String c_website, String c_state) {

@@ -1,4 +1,4 @@
-package User;
+package entity;
 
 /**
  * Created by mac on 2018/8/14.
@@ -11,10 +11,19 @@ public class Role {
     public Role() {
     }
 
-    public Role(int r_id, String r_name, String r_position) {
+    public Role( String r_name, String r_position) {
         this.r_id = r_id;
         this.r_name = r_name;
         this.r_position = r_position;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "r_id=" + r_id +
+                ", r_name='" + r_name + '\'' +
+                ", r_position='" + r_position + '\'' +
+                '}';
     }
 
     public int getR_id() {
