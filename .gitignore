@@ -1,7 +1,0 @@
-# Created by .ignore support plugin (hsz.mobi)
-.idea/dataSources.local.xml
-.idea/dataSources/
-.idea/libraries/
-out/
-/.idea/
-/src/c3p0-config.xml
