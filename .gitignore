@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+out/
+
+/src/c3p0-config.xml
+/.idea/*

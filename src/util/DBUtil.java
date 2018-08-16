@@ -2,11 +2,16 @@ package util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import javax.sql.DataSource;
 import java.sql.*;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.sql.DataSource;
 
 public class DBUtil {
     private static DataSource ds = null;
@@ -104,5 +109,32 @@ public class DBUtil {
             }
         }
     }
+    public static void release(Connection conn, ResultSet rs, PreparedStatement statm) {
+        if (rs!=null)
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        rs = null;
+        if (statm != null)
+            try {
+                statm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        statm = null;
+        if (conn != null)
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        conn = null;
+    }
+    public static void main(String[] args) throws SQLException {
 
+        System.out.println(DBUtil.getConnection());
+
+    }
 }
