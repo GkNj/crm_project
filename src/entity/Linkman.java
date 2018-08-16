@@ -1,7 +1,5 @@
 package entity;
 
-import entity.Customer;
-
 /**
  * Created by mac on 2018/8/14.
  */
