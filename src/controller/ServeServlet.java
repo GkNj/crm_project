@@ -8,14 +8,14 @@ import service.ServeService;
 import service.impl.ServeServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-@WebServlet(urlPatterns = "/serve.do")
+
 public class ServeServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ServeService service = new ServeServiceImpl();
@@ -30,11 +30,28 @@ public class ServeServlet extends HttpServlet {
             if (method.equalsIgnoreCase("create")) {
                 this.create(req, resp);
             }
+            if (method.equalsIgnoreCase("query")) {
+                this.query(req, resp);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    private void query(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        String keyword = req.getParameter("keyword");
+        if (keyword == null) {
+            keyword = "";
+        }
+        Role u = (Role) req.getSession().getAttribute("user");
+        List<Service> list = service.queryForCustomerList(u, keyword);
+        req.setAttribute("list", list);
+        System.out.println(list);
+        req.getRequestDispatcher(req.getContextPath() + "service/allocation.jsp").forward(req, resp);
+
+    }
+
 
     private void create(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException, ServletException {
         String s_type = req.getParameter("s_type");
@@ -57,5 +74,10 @@ public class ServeServlet extends HttpServlet {
         int i = service.save(s);
         System.out.println(i);
         req.getRequestDispatcher("/service/create.jsp").forward(req, resp);
+    }
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("................");
     }
 }

@@ -48,7 +48,7 @@ CREATE TABLE `order`
     o_sum VARCHAR(255),
     CONSTRAINT fk_c_o FOREIGN KEY (c_id) REFERENCES customer (c_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE INDEX c_id ON `order` (c_id);
+CREATE INDEX c_id ON orders (c_id);
 CREATE TABLE product
 (
     p_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -57,7 +57,7 @@ CREATE TABLE product
     p_unit VARCHAR(255),
     p_price DECIMAL(10),
     o_id INT(11),
-    CONSTRAINT fk_p_o FOREIGN KEY (o_id) REFERENCES `order` (o_id) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT fk_p_o FOREIGN KEY (o_id) REFERENCES orders (o_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE INDEX o_id ON product (o_id);
 CREATE TABLE role

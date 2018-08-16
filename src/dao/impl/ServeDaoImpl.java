@@ -3,6 +3,7 @@ package dao.impl;
 import dao.ServeDao;
 import entity.Customer;
 import entity.Role;
+import entity.Service;
 import util.DBUtil;
 
 import java.sql.Connection;
@@ -46,6 +47,36 @@ public class ServeDaoImpl implements ServeDao {
             return list.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Service> queryForList(String sql) throws SQLException {
+        Connection conn = DBUtil.getConnection();
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        List<Service> list = rsTolist(rs);
+        DBUtil.closeConn(conn);
+        return list;
+    }
+
+    private List<Service> rsTolist(ResultSet rs) throws SQLException {
+        List<Service> list=new ArrayList<>();
+        while (rs.next()){
+            Service s=new Service();
+            s.setS_id(rs.getInt("s_id"));
+            s.setS_type(rs.getString("s_type"));
+            s.setS_detail(rs.getString("s_detail"));
+            Customer customer=new Customer();
+            customer.setC_id(rs.getInt("c_id"));
+            s.setCustomer(customer);
+            s.setS_request(rs.getString("s_request"));
+            Role role=new Role();
+            role.setR_id(rs.getInt("r_id"));
+            s.setRole(role);
+            s.setS_time(rs.getString("s_time"));
+            list.add(s);
+        }
+        return list;
     }
 
     private List<Customer> rsToList(ResultSet rs) throws SQLException {
