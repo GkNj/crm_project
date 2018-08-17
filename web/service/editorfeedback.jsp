@@ -2,9 +2,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
-  entity: dell
-  Date: 2018/8/14
-  Time: 10:32
+  User: dell
+  Date: 2018/8/17
+  Time: 16:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -50,14 +50,14 @@
         <div class="banneradd bor">
 
             <div class="baTopNo">
-                <span>服务处理</span>
+                <span>反馈处理</span>
             </div>
             <div class="cfD" style="margin-top: 30px;margin-left: 50px">
 
                 <table width="90%">
 
                     <c:forEach items="${list}" var="ser">
-                        <form action="/serve.do?method=addHandle&id=${ser.s_id}" method="post">
+                        <form action="/serve.do?method=addResult&id=${ser.s_id}&h_id=${handle.h_id}" method="post">
                             <div class="cfD" style="left: 560px ;top:90px ;position: absolute">
                                 <button class="button">帮助</button>
                                 <button class="button">返回</button>
@@ -72,6 +72,7 @@
                                 </td>
                                 <td width="40%" class="tdColor" style="color: black">咨询</td>
                             </tr>
+
                             <tr>
                                 <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">
                                     概要
@@ -114,24 +115,36 @@
                                 <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">
                                     服务处理
                                 </td>
-                                <td colspan="3" width="50%" class="tdColor" style="color: black;"><textarea
-                                        style="width: 350px;height: 80px" name="handle"></textarea></td>
+                                <td colspan="3" width="50%" class="tdColor" style="color: black;">${handle.h_handle}</td>
                             </tr>
                             <tr>
                                 <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">处理人
                                 </td>
-                                <td width="30%" class="tdColor" style="color: black"><input type="text"
-                                                                                            value="${sessionScope.login_name}"
-                                                                                            name="handleman"></td>
-                                    <jsp:useBean id="time" class="java.util.Date"/>
+                                <td width="30%" class="tdColor" style="color: black">${sessionScope.login_name}
+                                </td>
                                 <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">处理时间
                                 </td>
-                                <td width="40%" class="tdColor" style="color: black"><input name="s_time" id="s_time"
-                                                                                            value="
-    <fmt:formatDate value="<%=time%>" pattern="yyyy-MM-dd  HH :mm:ss"/>" class="text" style="width:250px" type="text"
-                                                                                            size="40"/>
-                                    <span class="red" style="color: red"> *</span></td>
+                                <td width="40%" class="tdColor" style="color: black">${handle.h_time}
+                                </td>
                             <tr>
+                            <tr>
+                                <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">
+                                    处理结果
+                                </td>
+                                <td width="30%" class="tdColor" style="color: black"><input type="text" name="result">
+                                </td>
+                                <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">满意度
+                                </td>
+                                <td width="40%" class="tdColor" style="color: black">
+                                    <select name="satifaction">
+                                        <option value="0">请选择</option>
+                                        <option value="5">⭐⭐⭐⭐⭐</option>
+                                        <option value="4">⭐⭐⭐⭐</option>
+                                        <option value="3">⭐⭐⭐</option>
+                                        <option value="2">⭐⭐</option>
+                                        <option value="1">⭐</option>
+                                    </select></td>
+                            </tr>
                         </form>
                     </c:forEach>
                 </table>
@@ -144,4 +157,3 @@
 </div>
 </body>
 </html>
-

@@ -1,7 +1,7 @@
 package dao.impl;
 
-import entity.Customer;
 import dao.CustomerDao;
+import entity.Customer;
 import util.DBUtil;
 
 import java.sql.Connection;

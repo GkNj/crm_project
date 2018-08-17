@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Customer;
+import entity.Handl;
 import entity.Role;
 import entity.Service;
 
@@ -15,4 +16,12 @@ public interface ServeDao {
     public Role queryForRole(String sql) throws SQLException;
 
     public List<Service> queryForList(String sql) throws SQLException;
+    public List<Handl> queryForList1(String sql) throws SQLException;
+    public int delete( String sql2,String sql) throws SQLException;
+
+    public Service queryForService(String sql) throws SQLException;
+
+    int updateHandle(Handl handl);
+
+
 }

@@ -17,6 +17,12 @@ public class Role {
         this.r_position = r_position;
     }
 
+    public Role(int r_id, String r_name, String r_position) {
+        this.r_id = r_id;
+        this.r_name = r_name;
+        this.r_position = r_position;
+    }
+
     @Override
     public String toString() {
         return "Role{" +

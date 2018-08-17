@@ -1,3 +1,5 @@
+<%@ page import="entity.Service" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -15,9 +17,21 @@
     <link rel="stylesheet" type="text/css" href="../base/css/css.css"/>
     <script type="text/javascript" src="../base/js/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="js/page.js" ></script> -->
+
 </head>
 
+<script type="text/javascript">
+    function myclick(b) {
+        id = b;
+        var a = document.getElementsByName("aDelete");
+        var c = "/serve.do?method=delete&id=" + id;
+        $('#aDelete_id').attr('href', c);
+    }
+
+</script>
+
 <body>
+
 <div id="pageAll">
     <div class="pageTop">
         <div class="page">
@@ -33,10 +47,13 @@
                 <div class="cfD" style="margin-top: 30px;margin-left: 50px">
                     <div class="cfD">
                         <%--<a href="communicationadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>--%>
-                        <button class="button" style="position: absolute;right: 130px;top: 10px"><a href="/serve.do?method=query">查询</a></button>
-                        <button class="button" style="position: absolute;right: 275px;top: 10px" type="submit">帮助</button>
+                        <button class="button" style="position: absolute;right: 130px;top: 10px;color: white"><a
+                                href="/serve.do?method=query">查询</a></button>
+                        <button class="button" style="position: absolute;right: 275px;top: 10px;color: white" type="submit">帮助
+                        </button>
                         <br>
                     </div>
+                    <form action="/serve.do?method=query" method="post" name="fom" id="fom">
                     <table width="90%">
                         <tr>
                             <td width="24"><img src="../base/img/ico07.gif" width="20" height="18"/></td>
@@ -49,9 +66,11 @@
                         </tr>
 
                     </table>
+                    </form>
                 </div>
                 <!-- banner 表格 显示 -->
                 <div class="conShow">
+                    <%--<form action="/serve.do?method=fenpei" method="post">--%>
                     <table border="1" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="66px" class="tdColor tdC">编号</td>
@@ -64,27 +83,47 @@
                             <td width="130px" class="tdColor">操作</td>
                         </tr>
                         <c:forEach items="${list}" var="ser">
-                        <tr>
-                            <td><a href="#">${ser.s_id}</a></td>
-                            <td><a href="#">${ser.customer.c_name}</a></td>
-                            <td><a href="#">${ser.s_etail}</a></td>
-                            <td><a href="#">${ser.s_type}</a></td>
-                            <td><a href="#">${ser.role.r_name}</a></td>
-                            <td><a href="#">${ser.s_time}</a></td>
-                            <td><select>
-                                <option>请选择...</option>
-                                <option>小明</option>
-                                <option>旺财</option>
-                                <option>球球</option>
-                                <option>孙小美</option>
-                                <option>周婕纶</option>
-                            </select></td>
-                            <td><a href="connoisseuradd.html"></a> <img
-                                    class="operation delban"
-                                    src="../base/img/delete.png"></td>
-                        </tr>
+                            <form action="/serve.do?method=fenpei&id=${ser.s_id} " method="post">
+                            <tr>
+                                <td><a href="#">${ser.s_id}</a></td>
+                                <td><a href="#">${ser.customer.c_name}</a></td>
+                                <td><a href="#">${ser.s_detail}</a></td>
+                                <td><a href="#">${ser.s_type}</a></td>
+                                <td><a href="#">${ser.role.r_name}</a></td>
+                                <td><a href="#">${ser.s_time}</a></td>
+                                <td><select id="dispose" name="dispose">
+                                    <option value="小明">小明</option>
+                                    <option value="旺财">旺财</option>
+                                    <option value="球球">球球</option>
+                                    <option value="孙小美">孙小美</option>
+                                    <option value="周婕纶">周婕纶</option>
+                                </select>
+                                    <button class="button" style="color: white;background-color: #47a4e1" type="submit">
+                                        分配
+                                    </button>
+                                </td>
+                                <%--<td><a href="/serve.do?method=delete&id=${ser.s_id}">删除</a>--%>
+                                <td><a href="javascript:void(0)" onclick="myclick(${ser.s_id})"><img class="operation delban" src="../base/img/delete.png"></a></td>
+
+                            <%--<img--%>
+                                        <%--class="operation delban"--%>
+                                        <%--src="../base/img/delete.png">--%>
+                                </td>
+                            </tr>
+                            </form>
                         </c:forEach>
+                        <%
+                            List<Service> list = (List<Service>) request.getAttribute("list");
+                            if (list.isEmpty()) {
+                        %>
+                        <tr>
+                            <td colspan="100" style="background-color: snow">没有查询到客户信息！</td>
+                        </tr>
+                        <%
+                            }
+                        %>
                     </table>
+                   <%-- </form>--%>
                     <div class="paging">此处是分页</div>
                 </div>
                 <!-- banner 表格 显示 end-->
@@ -99,28 +138,28 @@
     <div class="banDel">
         <div class="delete">
             <div class="close">
-                <a><img src="../base/img/shanchu.png"/></a>
+                <a ><img src="../base/img/shanchu.png"/></a>
             </div>
             <p class="delP1">你确定要删除此条记录吗？</p>
             <p class="delP2">
-                <a href="#" class="ok yes">确定</a><a class="ok no">取消</a>
+                <a name="aDelete" id="aDelete_id" href="/customer.do?method=delete&cId" class="ok yes" >确定</a><a class="ok no">取消</a>
             </p>
         </div>
     </div>
 </div>
 </body>
 
-<script type="text/javascript">
-    // 广告弹出框
-    $(".delban").click(function () {
-        $(".banDel").show();
-    });
-    $(".close").click(function () {
-        $(".banDel").hide();
-    });
-    $(".no").click(function () {
-        $(".banDel").hide();
-    });
-    // 广告弹出框 end
+ <script type="text/javascript">
+     // 广告弹出框
+     $(".delban").click(function () {
+         $(".banDel").show();
+     });
+     $(".close").click(function () {
+         $(".banDel").hide();
+     });
+     $(".no").click(function () {
+         $(".banDel").hide();
+     });
+  // 广告弹出框 end
 </script>
 </html>

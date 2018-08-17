@@ -2,16 +2,13 @@ package util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+import javax.sql.DataSource;
 import java.sql.*;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.sql.DataSource;
 
 public class DBUtil {
     private static DataSource ds = null;
@@ -23,7 +20,7 @@ public class DBUtil {
      * 通用数据查询方法
      * @throws SQLException
      */
-    public static List<Map<String,Object>> queryForList(String sql) throws SQLException{
+    public static List<Map<String,Object>> queryForList(String sql) throws SQLException {
         Connection conn = ds.getConnection();
         Statement stat = conn.createStatement();
         ResultSet rs = stat.executeQuery(sql);

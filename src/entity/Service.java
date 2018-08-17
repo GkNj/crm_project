@@ -6,24 +6,11 @@ public class Service {
     private String s_detail;
     private Customer customer;
     private String s_state;
-    private  String s_request;
-    private  Role role;
-    private  String s_time;
-
-    public Service() {
-    }
-
-    public Service(int s_id, String s_type, String s_detail, Customer customer, String s_state, String s_request, Role role, String s_time) {
-
-        this.s_id = s_id;
-        this.s_type = s_type;
-        this.s_detail = s_detail;
-        this.customer = customer;
-        this.s_state = s_state;
-        this.s_request = s_request;
-        this.role = role;
-        this.s_time = s_time;
-    }
+    private String s_request;
+    private Role role;
+    private String s_time;
+    private String s_disposeman;
+    private String s_date;
 
     @Override
     public String toString() {
@@ -36,7 +23,12 @@ public class Service {
                 ", s_request='" + s_request + '\'' +
                 ", role=" + role +
                 ", s_time='" + s_time + '\'' +
+                ", s_disposeman='" + s_disposeman + '\'' +
+                ", s_date='" + s_date + '\'' +
                 '}';
+    }
+
+    public Service() {
     }
 
     public int getS_id() {
@@ -102,5 +94,35 @@ public class Service {
 
     public void setS_time(String s_time) {
         this.s_time = s_time;
+    }
+
+    public String getS_disposeman() {
+        return s_disposeman;
+    }
+
+    public void setS_disposeman(String s_disposeman) {
+        this.s_disposeman = s_disposeman;
+    }
+
+    public String getS_date() {
+        return s_date;
+    }
+
+    public void setS_date(String s_date) {
+        this.s_date = s_date;
+    }
+
+    public Service(int s_id, String s_type, String s_detail, Customer customer, String s_state, String s_request, Role role, String s_time, String s_disposeman, String s_date) {
+
+        this.s_id = s_id;
+        this.s_type = s_type;
+        this.s_detail = s_detail;
+        this.customer = customer;
+        this.s_state = s_state;
+        this.s_request = s_request;
+        this.role = role;
+        this.s_time = s_time;
+        this.s_disposeman = s_disposeman;
+        this.s_date = s_date;
     }
 }

@@ -1,4 +1,6 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="entity.Service" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   entity: dell
   Date: 2018/8/14
@@ -30,35 +32,23 @@
         <div class="connoisseur">
             <div class="conform">
                 <div class="cfD" style="margin-top: 30px;margin-left: 50px">
+                    <form action="/serve.do?method=query1" method="post" name="fom" id="fom">
                     <table width="90%">
                         <tr>
-                            <td width="20%" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户</td>
-                            <td width="20%" class="tdColor" style="color: black"><input type="text"></td>
-                            <td width="20%" class="tdColor" style="background-color: #47a4e1;color: black">概要</td>
-                            <td width="20%" class="tdColor" style="color: black"><input type="text"></td>
-                            <td width="20%" class="tdColor" style="background-color: #47a4e1;color: black">服务类型</td>
-                            <td width="10%" class="tdColor" style="color: black"><select name="" id="">
-                                <option value="">全部</option>
-                                <option value="">咨询</option>
-                                <option value="">建议</option>
-                                <option value="">投诉</option>
-                            </select></td>
+                            <td width="24"><img src="../base/img/ico07.gif" width="20" height="18"/></td>
+                            <td width="519"><label>请输入关键字:
+                                <input name="keyword" type="text"/>
+                            </label>
+                                </input>
+                                <input name="Submit" type="submit" class="right-button02" value="查 询"/></td>
+                            <td width="679" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         </tr>
-                        <tr>
-                            <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建日期</td>
-                            <td width="30%" class="tdColor" style="color: black"><input type="text"></td>
-                            <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">状态</td>
-                            <td width="40%" class="tdColor" style="color: black"><select>
-                                <option>新创建</option>
-                                <option>已分配</option>
-                            </select></td>
-                        </tr>
-
                     </table>
+                    </form>
                 </div>
                 <!-- banner 表格 显示 -->
                 <div class="conShow">
-                    <table border="1" cellspacing="0" cellpadding="0">
+                    <table border="1" cellspacing="0" cellpadding="0" >
                         <tr>
                             <td width="66px" class="tdColor tdC">编号</td>
                             <td width="170px" class="tdColor">客户</td>
@@ -66,22 +56,30 @@
                             <td width="145px" class="tdColor">服务类型</td>
                             <td width="140px" class="tdColor">创建人</td>
                             <td width="140px" class="tdColor">创建日期</td>
-                            <td width="145px" class="tdColor">分配给</td>
                             <td width="130px" class="tdColor">操作</td>
                         </tr>
+                        <c:forEach items="${list}" var="ser">
+                                <tr>
+                                    <td>${ser.s_id}</td>
+                                    <td>${ser.customer.c_name}</td>
+                                    <td>${ser.s_detail}</td>
+                                    <td>${ser.s_type}</td>
+                                    <td>${ser.s_disposeman}</td>
+                                    <td>${ser.s_date}</td>
+                                    <td><a href="/serve.do?method=query2&id=${ser.s_id}"><img class="operation" src="../base/img/update.png"></a>
+                                        </td>
+                                </tr>
+                        </c:forEach>
+                        <%
+                            List<Service> list = (List<Service>) request.getAttribute("list");
+                            if (list.isEmpty()) {
+                        %>
                         <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>山下就只</td>
-                            <td>13312345678</td>
-                            <td>南京市</td>
-                            <td>南京设疑网络科技公司哈哈哈</td>
-                            <td>总监</td>
-                            <td><a href="editormanage.jsp"><img class="operation"
-                                                                   src="../base/img/update.png"></a> <img
-                            ></td>
+                            <td colspan="100" style="background-color: snow">没有查询到信息！</td>
                         </tr>
-
+                        <%
+                            }
+                        %>
                     </table>
                     <div class="paging">此处是分页</div>
                 </div>

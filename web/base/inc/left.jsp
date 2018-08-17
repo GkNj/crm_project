@@ -72,14 +72,14 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../../service/manage.jsp"
+                                                                   src="../img/coin222.png"/><a href="${path}/serve.do?method=query1"
                                                                                                 target="main"
                                                                                                 class="cks">服务处理</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../../service/feedback.jsp"
+                                                                   src="../img/coin222.png"/><a href="${path}/serve.do?method=query3"
                                                                                                 target="main"
                                                                                                 class="cks">服务反馈</a><img
                     class="icon5" src="../img/coin21.png"/>

@@ -17,6 +17,12 @@
     <link rel="stylesheet" type="text/css" href="../base/css/css.css"/>
     <script type="text/javascript" src="../base/js/jquery.min.js"></script>
 </head>
+
+<script type="text/javascript">
+    function success() {
+        alert("保存成功")
+    }
+</script>
 <body>
 <div id="pageAll">
     <div class="pageTop">
@@ -35,7 +41,7 @@
                 <div class="cfD">
                     <%--<a href="communicationadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>--%>
                     <button class="button" style="position: absolute;right: 130px">帮助</button>
-                    <button class="button" style="position: absolute;right: 275px" type="submit">保存</button>
+                    <button class="button" style="position: absolute;right: 275px" type="submit" onclick="success()">保存</button>
                     <br>
                 </div>
                 <div class="cfD" style="margin-top: 30px;margin-left: 50px">
@@ -72,7 +78,7 @@
                         <tr>
                             <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建人
                             </td>
-                            <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" value="张三" name="role">
+                            <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" value="${sessionScope.login_name}" name="role">
                             </td>
                             <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">创建时间</td>
                             <jsp:useBean id="time" class="java.util.Date"/>
