@@ -25,7 +25,7 @@ public class ServeServiceImpl implements ServeService {
 //        if (!(u.getuRole().getdId() == 3)) {
 //            sql += " and c_manager =" + u.getuId();
 //        }
-        sql+=" and (c_name like '%"+keyword+"%' or c_area like '%"+keyword+"%')";
+        sql+=" and (c_name like '%"+keyword+"%' or s_type like '%"+keyword+"%')";
         System.out.println(sql);
         return dao.queryForList(sql);
 

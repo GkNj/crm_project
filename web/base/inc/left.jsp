@@ -79,7 +79,7 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../../service/feedback.jsp"
+                                                                   src="../img/coin222.png"/><a href="/serve.do?method=query2"
                                                                                                 target="main"
                                                                                                 class="cks">服务反馈</a><img
                     class="icon5" src="../img/coin21.png"/>

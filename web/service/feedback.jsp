@@ -24,8 +24,12 @@
 			<div class="banneradd bor">
 				<div class="baTopNo"><span>服务反馈</span></div>
 				<div class="baBody">
+                    <div class="bbD"><label>
+                        &nbsp;&nbsp;请输入关键字:<input name="keyword" type="text" class="input3"/>
+                    </label>
+
 					<div class="bbD">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户：<input type="text" class="input3" />
+						<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户：<input type="text" class="input3" />
 					</div>
 					<div class="bbD">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;概要：<input type="text" class="input3" />
@@ -50,26 +54,19 @@
 								<td width="330px" class="tdColor">创建日期</td>
 								<td width="130px" class="tdColor">操作</td>
 							</tr>
+							<c:forEach items="${list}" var="ser">
 							<tr height="85px">
-								<td>455</td>
-								<td>太阳药业</td>
-								<td>询问收音机价格</td>
-								<td>咨询</td>
-								<td>小明</td>
-								<td>2007年12月02日</td>
-								<td><a href="banneradd.html"><img class="operation" src="../base/img/update.png"></a>
+								<td><a href="#">${ser.s_id}</a></td>
+								<td><a href="#">${ser.customer.c_name}</a></td>
+								<td><a href="#">${ser.s_detail}</a></td>
+								<td><a href="#">${ser.s_type}</a></td>
+								<td><a href="#">${ser.role.r_name}</a></td>
+								<td><a href="#">${ser.s_time}</a></td>
+								<td><a href="banneradd.html"><img class="operation"
+																  src="../base/img/update.png"></a>
 									<img class="operation delban" src="../base/img/delete.png"></td>
 							</tr>
-							<tr height="85px">
-								<td>454</td>
-								<td>云南天河烟草公司</td>
-								<td>询问收音机价格</td>
-								<td>建议</td>
-								<td>小李</td>
-								<td>2007年12月02日</td>
-								<td><a href="banneradd.html"><img class="operation" src="../base/img/update.png"></a>
-									<img class="operation delban" src="../base/img/delete.png"></td>
-							</tr>
+							</c:forEach>
 						</table>
 						<div class="paging">此处是分页</div>
 					</div>

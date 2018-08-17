@@ -34,26 +34,17 @@ public class ServeServlet extends HttpServlet {
             if (method.equalsIgnoreCase("query")) {
                 this.query(req, resp);
             }
+            if (method.equalsIgnoreCase("query2")) {
+                this.query2(req, resp);
+            }
+            if (method.equalsIgnoreCase("query3")) {
+                this.query3(req, resp);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
-    private void query(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-        String keyword = req.getParameter("keyword");
-        if (keyword == null) {
-            keyword = "";
-        }
-        Role u = (Role) req.getSession().getAttribute("user");
-        List<Service> list = service.queryForCustomerList(u, keyword);
-        req.setAttribute("list", list);
-        System.out.println(list);
-        req.getRequestDispatcher(req.getContextPath() + "service/allocation.jsp").forward(req, resp);
-
-    }
-
-
     private void create(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException, ServletException {
         String s_type = req.getParameter("s_type");
         String s_detail = req.getParameter("s_detail");
@@ -76,6 +67,42 @@ public class ServeServlet extends HttpServlet {
         System.out.println(i);
         req.getRequestDispatcher("/service/create.jsp").forward(req, resp);
     }
+    private void query(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        String keyword = req.getParameter("keyword");
+        if (keyword == null) {
+            keyword = "";
+        }
+        Role u = (Role) req.getSession().getAttribute("user");
+        List<Service> list = service.queryForCustomerList(u, keyword);
+        req.setAttribute("list", list);
+        System.out.println(list);
+        req.getRequestDispatcher(req.getContextPath() + "service/allocation.jsp").forward(req, resp);
+
+    }
+
+
+
+    private  void  query2(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException{
+        String keyword = req.getParameter("keyword");
+        if (keyword == null) {
+            keyword = "";
+        }
+        Role u = (Role) req.getSession().getAttribute("user");
+        List<Service> list = service.queryForCustomerList(u, keyword);
+        req.setAttribute("list", list);
+        System.out.println(list);
+        req.getRequestDispatcher(req.getContextPath() + "service/feedback.jsp").forward(req, resp);
+
+    }
+
+
+    private  void  query3(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException{
+        List<Service> svcList = dao.queryForList("select * from service");
+        req.setAttribute("list",svcList);
+        System.out.println(svcList);
+        req.getRequestDispatcher(req.getContextPath()+"service/sum.jsp").forward(req,resp);
+    }
+
 
     @Override
     public void init() throws ServletException {
