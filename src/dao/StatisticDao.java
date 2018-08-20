@@ -7,14 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 public interface StatisticDao {
-    public ArrayList<Order> findByYear();
+    public Map findByYear(String year, int c_id);
     public Order findByName();
     public Map findByClass();
     public Map<Integer, Integer> findByCredit();
     public Map findBySatifaction();
     public ArrayList findAllLost();
-    public ArrayList findLostByCustomerName();
-    public ArrayList findLostByMannager();
+    public ArrayList findLostByCustomerId(int id);
+    public ArrayList findLostByMannager(int id);
     List find(String findType);
-
+    Map<String, Integer> findByContribute();
 }

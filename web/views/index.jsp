@@ -12,6 +12,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>首页-有点</title>
 </head>
+
+<div>
 <frameset rows="100,*" cols="*" scrolling="No" framespacing="0"
           frameborder="no" border="0">
     <frame src="../base/inc/head.jsp"
@@ -25,5 +27,5 @@
                id="rightFrame" title="rightFrame">
     </frameset>
 </frameset>
-
+</div>
 </html>

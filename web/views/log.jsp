@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="../base/css/page.css" />
     <script type="text/javascript" src="../base/js/jquery.min.js"></script>
     <script type="text/javascript" src="../base/js/public.js"></script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
 

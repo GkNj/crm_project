@@ -17,7 +17,12 @@
     <script type="text/javascript" src="../base/js/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-
+<script language="JavaScript">
+    function go()
+    {
+        window.history.go(-1);
+    }
+</SCRIPT>
 <%--<script type="text/javascript">--%>
 
 <%--function submit(id) {--%>
@@ -59,9 +64,9 @@
                     <c:forEach items="${list}" var="ser">
                         <form action="/serve.do?method=addResult&id=${ser.s_id}&h_id=${handle.h_id}" method="post">
                             <div class="cfD" style="left: 560px ;top:90px ;position: absolute">
-                                <button class="button">帮助</button>
-                                <button class="button">返回</button>
-                                <button class="button" type="submit">保存</button>
+                                <input type="button" style="float: right; width: 135px;height: 30px;border: none;font-size: 16px;color: #fff;background-color: #47a4e1;"
+                                       name="Submit" onclick="javascript:history.back(-1);" value="返回"><br>
+                                <button class="button" type="submit" style="float:right;width: 135px;height: 30px;border: none;font-size: 16px;color: #fff;background-color: #47a4e1;position: absolute;top:0px;left: 150px">保存</button>
                             </div>
                             <tr>
                                 <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">

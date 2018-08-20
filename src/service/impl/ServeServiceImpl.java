@@ -36,7 +36,7 @@ public class ServeServiceImpl implements ServeService {
 
     @Override
     public int delete(String id) throws SQLException {
-        String sql2="update handle set s_id = null where s_id= "+id;
+        String sql2="delete from  handle  where s_id= "+id;
         String sql="delete  from service where s_id ="+id;
         System.out.println(sql2);
         System.out.println(sql);
@@ -64,7 +64,7 @@ public class ServeServiceImpl implements ServeService {
     @Override
     public List<Service> queryForServiceList(Role u, String keyword) throws SQLException {
 
-        String sql = "select distinct * from service s,customer c,role r where c.c_id=s.c_id and c.r_id=r.r_id and s.s_state != '已处理'";
+        String sql = "select distinct * from service s,customer c,role r where c.c_id=s.c_id and c.r_id=r.r_id and s.s_state = '已分配'";
 //        if (!(u.getuRole().getdId() == 3)) {
 //            sql += " and c_manager =" + u.getuId();
 //        }
@@ -96,7 +96,7 @@ public class ServeServiceImpl implements ServeService {
 
     @Override
     public List<Service> queryForFeedBackList(Role u, String keyword) throws SQLException {
-        String sql = "select distinct * from service s,customer c,role r ,handle h where c.c_id=s.c_id and c.r_id=r.r_id and s.s_id = h.s_id and s.s_state = '已处理'  and h_result IS NULL";
+        String sql = "select distinct * from service s,customer c,role r  where c.c_id=s.c_id and c.r_id=r.r_id  and s.s_state = '已处理'  ";
 //        if (!(u.getuRole().getdId() == 3)) {
 //            sql += " and c_manager =" + u.getuId();
 //        }
@@ -118,5 +118,23 @@ public class ServeServiceImpl implements ServeService {
 //        System.out.println(sql);
         int i = dao.update(sql);
         return i;
+    }
+
+    @Override
+    public List<Service> queryForPlacefile(Role u, String keyword) throws SQLException {
+        String sql = "select distinct * from service s,customer c,role r  where c.c_id=s.c_id and c.r_id=r.r_id  and s.s_state = '已归档'  ";
+//        if (!(u.getuRole().getdId() == 3)) {
+//            sql += " and c_manager =" + u.getuId();
+//        }
+        sql+=" and (c_name like '%"+keyword+"%' or s_type like '%"+keyword+"%')";
+//        System.out.println(sql);
+        return dao.queryForList(sql);
+    }
+
+    @Override
+    public List<Handl> queryForHandle1(String id) throws SQLException {
+        String sql="select distinct  * from  handle where s_id =" +id;
+        System.out.println(sql);
+        return dao.queryForList2(sql);
     }
 }

@@ -9,7 +9,7 @@ public class Trade {
     private String t_address;
     private String t_detail;
     private String t_outline;
-    private String t_remake;
+    private String t_remark;
     private Customer customer;
 
     public Trade() {
@@ -21,7 +21,7 @@ public class Trade {
         this.t_address = t_address;
         this.t_detail = t_detail;
         this.t_outline = t_outline;
-        this.t_remake = t_remake;
+        this.t_remark = t_remake;
         this.customer = customer;
     }
 
@@ -65,12 +65,12 @@ public class Trade {
         this.t_outline = t_outline;
     }
 
-    public String getT_remake() {
-        return t_remake;
+    public String getT_remark() {
+        return t_remark;
     }
 
-    public void setT_remake(String t_remake) {
-        this.t_remake = t_remake;
+    public void setT_remark(String t_remark) {
+        this.t_remark = t_remark;
     }
 
     public Customer getCustomer() {

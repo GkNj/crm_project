@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-cuowu
+用户名或密码错了请重新登录
+<<a href="log.jsp">登录页面</a>
 </body>
 </html>

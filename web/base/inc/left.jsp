@@ -38,12 +38,12 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                     src="../img/coin222.png"/><a href="../../customer/connoisseur.jsp" target="main" class="cks">客户信息管理</a><img
+                     src="../img/coin222.png"/><a href="/customer.do?method=query" target="main" class="cks">客户信息管理</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                src="../img/coin222.png"/><a href="../../customer/liushi.jsp" target="main"
+                src="../img/coin222.png"/><a href="/liushi.do?method=query" target="main"
                 class="cks">客户流失管理</a><img class="icon5" src="../img/coin21.png"/>
             </dd>
         </dl>
@@ -56,6 +56,7 @@
                     class="icon4"
                     src="../img/coin20.png"/>
             </dt>
+<c:if test="${sessionScope.login_position=='客户经理'}">
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
                                                                    src="../img/coin222.png"/><a href="../../service/create.jsp"
@@ -63,6 +64,8 @@
                                                                                                 class="cks">服务创建</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
+</c:if>
+            <c:if test="${sessionScope.login_position=='高管'}">
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
                                                                    src="../img/coin222.png"/><a href="${path}/serve.do?method=query"
@@ -70,6 +73,8 @@
                                                                                                 class="cks">服务分配</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
+            </c:if>
+            <c:if test="${sessionScope.login_position=='客户经理'}">
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
                                                                    src="../img/coin222.png"/><a href="${path}/serve.do?method=query1"
@@ -77,6 +82,7 @@
                                                                                                 class="cks">服务处理</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
+
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
                                                                    src="../img/coin222.png"/><a href="${path}/serve.do?method=query3"
@@ -84,9 +90,10 @@
                                                                                                 class="cks">服务反馈</a><img
                     class="icon5" src="../img/coin21.png"/>
             </dd>
+            </c:if>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../../service/sum.jsp"
+                                                                   src="../img/coin222.png"/><a href="${path}/serve.do?method=query5"
                                                                                                 target="main"
                                                                                                 class="cks">服务归档</a><img
                     class="icon5" src="../img/coin21.png"/>
@@ -103,7 +110,7 @@
             </dt>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../../statistics/customerContribute.html"
+                                                                   src="../img/coin222.png"/><a href="${path}/statisticShow.do?method=findByYear"
                                                                                                 target="main"
                                                                                                 class="cks">客户贡献分析</a><img
                     class="icon5"
@@ -111,7 +118,7 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../balance.html"
+                                                                   src="../img/coin222.png"/><a href="${path}/statisticShow.do?method=findType"
                                                                                                 target="main"
                                                                                                 class="cks">客户构成分析</a><img
                     class="icon5"
@@ -119,7 +126,7 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../balance.html"
+                                                                   src="../img/coin222.png"/><a href="${path}/statisticShow.do?method=findByService"
                                                                                                 target="main"
                                                                                                 class="cks">客户服务分析</a><img
                     class="icon5"
@@ -127,7 +134,7 @@
             </dd>
             <dd>
                 <img class="coin11" src="../img/coin111.png"/><img class="coin22"
-                                                                   src="../img/coin222.png"/><a href="../balance.html"
+                                                                   src="../img/coin222.png"/><a href="${path}/statisticShow.do?method=findLost"
                                                                                                 target="main"
                                                                                                 class="cks">客户流失分析</a><img
                     class="icon5"

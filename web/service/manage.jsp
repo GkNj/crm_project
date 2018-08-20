@@ -54,7 +54,7 @@
                             <td width="170px" class="tdColor">客户</td>
                             <td width="135px" class="tdColor">概要</td>
                             <td width="145px" class="tdColor">服务类型</td>
-                            <td width="140px" class="tdColor">创建人</td>
+                            <td width="140px" class="tdColor">处理人</td>
                             <td width="140px" class="tdColor">创建日期</td>
                             <td width="130px" class="tdColor">操作</td>
                         </tr>

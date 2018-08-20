@@ -25,11 +25,18 @@
     <div class="headR">
         <p class="p1">
             欢迎，
-            <?php echo cookie('name')?>
+            ${sessionScope.login_name}
         </p>
         <p class="p2">
-            <a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;<a
-                href="{:U('Admin/Index/exit')}" class="goOut">退出</a>
+        <form target="_top" action="/views/log.jsp">
+        <button type="submit" style=";
+    width: 50px;
+    height: 30px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #47a4e1;">退出</button>
+    </form>
         </p>
     </div>
     <!-- onclick="{if(confirm(&quot;确定退出吗&quot;)){return true;}return false;}" -->

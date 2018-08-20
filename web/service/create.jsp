@@ -40,7 +40,6 @@
             <form action="${path}/serve.do?method=create" method="post">
                 <div class="cfD">
                     <%--<a href="communicationadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>--%>
-                    <button class="button" style="position: absolute;right: 130px">帮助</button>
                     <button class="button" style="position: absolute;right: 275px" type="submit" onclick="success()">保存</button>
                     <br>
                 </div>
@@ -48,7 +47,7 @@
                     <table width="90%">
                         <tr>
                             <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">编号</td>
-                            <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" name="s_id">
+                            <td width="30%" class="tdColor" style="color: black;text-align: left">
                             </td>
                             <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">服务类型</td>
                             <td width="40%" class="tdColor" style="color: black"><select name="s_type" id="">
@@ -78,7 +77,7 @@
                         <tr>
                             <td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">创建人
                             </td>
-                            <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" value="${sessionScope.login_name}" name="role">
+                            <td width="30%" class="tdColor" style="color: black;text-align: left"><input type="text" readonly value="${sessionScope.login_name}" name="role">
                             </td>
                             <td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">创建时间</td>
                             <jsp:useBean id="time" class="java.util.Date"/>

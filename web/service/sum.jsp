@@ -1,78 +1,119 @@
+<%@ page import="entity.Service" %>
+<%@ page import="java.util.List" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>服务归档</title>
-	<link rel="stylesheet" type="text/css" href="../base/css/css.css" />
-	<script type="text/javascript" src="../base/js/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>行家-有点</title>
+    <link rel="stylesheet" type="text/css" href="../base/css/css.css"/>
+    <script type="text/javascript" src="../base/js/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/page.js" ></script> -->
 </head>
+
 <body>
 <div id="pageAll">
-	<div class="pageTop">
-		<div class="page">
-			<img src="../base/img/coin02.png" /><span><a href="#">服务管理</a>&nbsp;-</span>&nbsp;服务归档
-			<div class="cfD" style="left: 800px ;top:-10px ;position: absolute">
-				<button class="button">帮助</button>
-					<button class="button">查询</button>
-			</div>
-		</div>
-	</div>
-	<div class="page ">
-		<!-- 上传广告页面样式 -->
-		<div class="banneradd bor">
-			<div class="baTopNo"><span>服务归档</span></div>
-			<div class="baBody">
-				<div class="bbD"><label>
-					&nbsp;&nbsp;请输入关键字:<input name="keyword" type="text" class="input3"/>
-				</label>
+    <div class="pageTop">
+        <div class="page">
+            <img src="../base/img/coin02.png"/><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+                href="#">服务分配</a>&nbsp;-</span>&nbsp;客户服务管理
+        </div>
+    </div>
 
-					<div class="bbD">
-					<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户：<input type="text" class="input3" />
-				</div>
-				<div class="bbD">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;概要：<input type="text" class="input3" />
-				</div>
-				<div class="bbD">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务类型：<select class="input3"><option>咨询</option><option>建议</option><option>投诉</option></select>
-				</div>
-				<div class="bbD">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建日期：<input class="input3" type="text" />
-				</div>
-				<div class="bbD">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;状态：<select class="input3"><option>已归档</option><option>未归档</option></select>
-				</div>
-				<div class="conShow">
-					<table border="1" cellspacing="0" cellpadding="0">
-						<tr>
-							<td width="66px" class="tdColor tdC">编号</td>
-							<td width="305px" class="tdColor">客户</td>
-							<td width="275px" class="tdColor">概要</td>
-							<td width="315px" class="tdColor">服务类型</td>
-							<td width="240px" class="tdColor">创建人</td>
-							<td width="330px" class="tdColor">创建日期</td>
-							<td width="130px" class="tdColor">操作</td>
-						</tr>
-						<tr height="85px">
-							<td><a href="#">${ser.s_id}</a></td>
-							<td><a href="#">${ser.customer.c_name}</a></td>
-							<td><a href="#">${ser.s_detail}</a></td>
-							<td><a href="#">${ser.s_type}</a></td>
-							<td><a href="#">${ser.role.r_name}</a></td>
-							<td><a href="#">${ser.s_time}</a></td>
-							<td><a href="banneradd.html"><img class="operation"
-															  src="../base/img/update.png"></a>
-								<img class="operation delban" src="../base/img/delete.png"></td>
-						</tr>
+    <div class="page">
+        <!-- banner页面样式 -->
+        <div class="connoisseur">
+            <div class="conform">
+                <div class="cfD" style="margin-top: 30px;margin-left: 50px">
+                    <form action="/serve.do?method=query5" method="post" name="fom" id="fom">
+                        <table width="90%">
+                            <tr>
+                                <td width="24"><img src="../base/img/ico07.gif" width="20" height="18"/></td>
+                                <td width="519"><label>请输入关键字:
+                                    <input name="keyword" type="text"/>
+                                </label>
+                                    </input>
+                                    <input name="Submit" type="submit" class="right-button02" value="查 询"/></td>
+                                <td width="679" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <!-- banner 表格 显示 -->
+                <div class="conShow">
+                    <table border="1" cellspacing="0" cellpadding="0" >
+                        <tr>
+                            <td width="66px" class="tdColor tdC">编号</td>
+                            <td width="170px" class="tdColor">客户</td>
+                            <td width="135px" class="tdColor">概要</td>
+                            <td width="145px" class="tdColor">服务类型</td>
+                            <td width="140px" class="tdColor">创建人</td>
+                            <td width="140px" class="tdColor">创建日期</td>
+                            <td width="140px" class="tdColor">状态</td>
+                            <td width="130px" class="tdColor">操作</td>
+                        </tr>
+                        <c:forEach items="${list}" var="ser">
+                            <tr>
+                                <td>${ser.s_id}</td>
+                                <td>${ser.customer.c_name}</td>
+                                <td>${ser.s_detail}</td>
+                                <td>${ser.s_type}</td>
+                                <td>${ser.s_disposeman}</td>
+                                <td>${ser.s_date}</td>
+                                <td>${ser.s_state}</td>
+                                <td><a href="/serve.do?method=query6&id=${ser.s_id}"><img class="operation" src="../base/img/update.png"></a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        <%
+                            List<Service> list = (List<Service>) request.getAttribute("list");
+                            if (list.isEmpty()) {
+                        %>
+                        <tr>
+                            <td colspan="100" style="background-color: snow">没有查询到信息！</td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </table>
+                    <div class="paging">此处是分页</div>
+                </div>
+                <!-- banner 表格 显示 end-->
+            </div>
+            <!-- banner页面样式end -->
+        </div>
 
-					</table>
-					<div class="paging">此处是分页</div>
-				</div>
-			</div>
-		</div>
+    </div>
 
-		<!-- 上传广告页面样式end -->
-	</div>
+
+    <!-- 删除弹出框 -->
+    <div class="banDel">
+        <div class="delete">
+            <div class="close">
+                <a><img src="../base/img/shanchu.png"/></a>
+            </div>
+            <p class="delP1">你确定要删除此条记录吗？</p>
+            <p class="delP2">
+                <a href="#" class="ok yes">确定</a><a class="ok no">取消</a>
+            </p>
+        </div>
+    </div>
 </div>
+<!-- 删除弹出框  end-->
 </body>
+
+<script type="text/javascript">
+    // 广告弹出框
+    $(".delban").click(function () {
+        $(".banDel").show();
+    });
+    $(".close").click(function () {
+        $(".banDel").hide();
+    });
+    $(".no").click(function () {
+        $(".banDel").hide();
+    });
+    // 广告弹出框 end
+</script>
 </html>

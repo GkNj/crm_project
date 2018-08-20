@@ -33,4 +33,8 @@ public interface ServeService {
    public List<Handl> queryForHandle(String id) throws SQLException;
 
     int updateState(String id) throws SQLException;
+
+    List<Service> queryForPlacefile(Role u, String keyword) throws SQLException;
+
+    List<Handl> queryForHandle1(String id) throws SQLException;
 }

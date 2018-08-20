@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,13 +9,28 @@
 <script type="text/javascript" src="../base/js/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="js/page.js" ></script> -->
 </head>
+<script type="text/javascript">
+    function myclick(b){
+        lid=b;
+        var a = document.getElementsByName("aDelete");
+        var c="/linkman.do?method=delete&id="+lid+"&c_id="+$('#hahaha').attr('value');
+        $('#aDelete_id').attr('href',c);
+
+    }
+    function checkForm() {
+        location.href = "/customer.do?method=query";
+    }
+        function go()
+        {
+            window.history.go(-1);
+        }
+</script>
 
 <body>
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="../base/img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
-					href="#">客户信息管理</a>&nbsp;-</span>&nbsp;客户信息&nbsp;-历史订单
+				<img src="../base/img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a onclick="javascript:history.back(-1);">客户信息管理</a>&nbsp;-</span>&nbsp;客户信息&nbsp;-历史订单
 			</div>
 		</div>
 
@@ -23,17 +39,20 @@
 			<div class="connoisseur">
 				<div class="conform">
 						<div class="cfD">
-								<a href="linkmanadd.jsp"><button class="button" style="position: absolute; right: 200px">新建</button></a>
-								<button class="button" style="float: right">返回</button><br>
+							<form action="/customer/orderadd.jsp?cId=${cId}" method="post">
+							<input name="Submit" type="button" class="button" style="float:right" value="返回" onclick="checkForm();"/><br>
+							</form>
 						</div>
 						<div class="cfD" style="margin-top: 30px">
 								<table width="100%">
-									<tr>
-										<td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户编号</td>
-										<td width="30%" class="tdColor" style="color: black">001</td>
-										<td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">客户名称</td>
-										<td width="40%" class="tdColor" style="color: black">聪海信息科技有限公司</td>
-									</tr>
+									<c:forEach items="${list1}" var="cus">
+										<tr>
+											<td width="100px" class="tdColor tdC" style="background-color: #47a4e1;color: black">客户编号</td>
+											<td width="30%" class="tdColor" style="color: black">${cus.c_id}</td>
+											<td width="100px" class="tdColor" style="background-color: #47a4e1;color: black">客户名称</td>
+											<td width="40%" class="tdColor" style="color: black">${cus.c_name}</td>
+										</tr>
+									</c:forEach>
 								</table>
 						</div>
 				</div>
@@ -47,18 +66,17 @@
 							<td width="275px" class="tdColor">状态</td>
 							<td width="290px" class="tdColor">操作</td>
 						</tr>
-						<tr style="height: 50px;">
-							<td>001</td>
-							<td>
-								2001-6-21 16:21:00
-							</td>
-							<td>北京市海淀区劳动路205号</td>
-							<td>未回款</td>
-							<td><a href="mingxi.jsp"><img class="operation"
-									src="../base/img/mingxi.png"></a>
-						</tr>
+						<c:forEach items="${list}" var="order">
+							<tr style="height: 50px">
+								<td>${order.o_id}</td>
+								<td>${order.o_time}</td>
+								<td>${order.o_position}</td>
+								<td>${order.o_state}</td>
+								<td><a href="/order.do?method=queryProduct&o_id=${order.o_id}"><img class="operation"
+																									src="../base/img/mingxi.png"></a></td>
+							</tr>
+						</c:forEach>
 					</table>
-					<div class="paging">此处是分页</div>
 				</div>
 				<!-- banner 表格 显示 end-->
 			</div>

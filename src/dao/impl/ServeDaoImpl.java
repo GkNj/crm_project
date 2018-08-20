@@ -76,19 +76,34 @@ public class ServeDaoImpl implements ServeDao {
             Service service=new Service();
             h.setH_id(rs.getInt("h_id"));
             service.setS_id(rs.getInt("s_id"));
-//            service.setS_type(rs.getString("s_type"));
-//            service.setS_detail(rs.getString("s_detail"));
-//            Customer customer=new Customer();
-//            customer.setC_name(rs.getString("c_name"));
-//            service.setCustomer(customer);
-//            service.setS_state(rs.getString("s_state"));
-//            service.setS_request(rs.getString("s_request"));
-//            Role role=new Role();
-//            role.setR_name(rs.getString("r_name"));
-//            service.setRole(role);
-//            service.setS_time(rs.getString("s_time"));
-//            service.setS_disposeman(rs.getString("s_disposeman"));
-//            service.setS_date(rs.getString("s_date"));
+            h.setService(service);
+            h.setH_handle(rs.getString("h_handle"));
+            Role role1=new Role();
+            role1.setR_id(rs.getInt("r_id"));
+            h.setRole(role1);
+            h.setH_time(rs.getString("h_time"));
+            list.add(h);
+        }
+        return list;
+     }
+    @Override
+    public List<Handl> queryForList2(String sql) throws SQLException {
+        Connection conn = DBUtil.getConnection();
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        List<Handl> list = Rstolist(rs);
+        if (!list.isEmpty()){
+            list.get(0);
+        }
+        return list;
+    }
+    private List<Handl> Rstolist(ResultSet rs) throws SQLException {
+        List<Handl> list =new ArrayList<>();
+        while (rs.next()){
+            Handl h=new Handl();
+            Service service=new Service();
+            h.setH_id(rs.getInt("h_id"));
+            service.setS_id(rs.getInt("s_id"));
             h.setService(service);
             h.setH_handle(rs.getString("h_handle"));
             Role role1=new Role();
@@ -96,21 +111,19 @@ public class ServeDaoImpl implements ServeDao {
             h.setRole(role1);
             h.setH_time(rs.getString("h_time"));
             h.setH_result(rs.getString("h_result"));
-//            h.setH_stai(rs.getString("h_stai"));
+            h.setH_stai(rs.getInt(7));
             list.add(h);
         }
         return list;
-     }
+    }
 
     @Override
     public int delete(String sql,String sql2) throws SQLException {
         Connection conn=DBUtil.getConnection();
         Statement sta = conn.createStatement();
-        conn.setAutoCommit(false);
 
-        sta.executeUpdate(sql2);
         int i = sta.executeUpdate(sql);
-        conn.commit();
+        sta.executeUpdate(sql2);
         DBUtil.closeConn(conn);
         return i;
     }
